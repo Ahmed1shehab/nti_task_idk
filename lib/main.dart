@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yarab_elsabr/views/dog_view.dart';
 
 import 'features/dog/screen/dog_page_image.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DogImagePage(),
+      home: DogView(),
     );
   }
 }

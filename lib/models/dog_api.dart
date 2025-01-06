@@ -13,19 +13,3 @@ class DogApi {
   }
 }
 
-Future<DogApi> fetchRandomDogImage() async {
-  const String url = 'https://dog.ceo/api/breeds/image/random';
-
-  try {
-    final response = await http.get(Uri.parse(url));
-
-    if (response.statusCode == 200) {
-      final Map<String, dynamic> jsonResponse = json.decode(response.body);
-      return DogApi.fromJson(jsonResponse);
-    } else {
-      throw Exception('Failed to load dog image');
-    }
-  } catch (e) {
-    throw Exception('Error fetching dog image: $e');
-  }
-}

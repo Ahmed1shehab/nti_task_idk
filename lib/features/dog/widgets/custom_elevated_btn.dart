@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
-ElevatedButton elevatedButton(final VoidCallback func) {
+ElevatedButton elevatedButton({
+  required VoidCallback onPressed,
+  required String label,
+}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.black,
+      // Button background color
       foregroundColor: Colors.white,
+      // Text color
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-      // Padding inside the button
-      textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      // Text style
+      textStyle: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
     ),
-    onPressed: func,
-    child: const Text('Generate New Image'),
+    onPressed: onPressed,
+    child: Text(label),
   );
 }
